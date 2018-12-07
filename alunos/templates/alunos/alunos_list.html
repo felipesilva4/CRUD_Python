@@ -1,0 +1,6 @@
+<h1>Lista de cadastros</h1>
+<br>
+{% for alunos in object_list %}
+   <a href = {% url 'alunos_detail' alunos.pk %}>{{ alunos.nome}} {{alunos.sobrenome}} {{alunos.pk}}</a>
+<br>
+{% endfor %}

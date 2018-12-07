@@ -1,0 +1,18 @@
+<h1> Detail view</h1>
+Nome: {{object.nome}}
+{{object.sobrenome}}
+<br>
+Idade: {{object.idade}}
+<br>
+nota 1: {{object.nota1}}
+<br>
+nota 2: {{object.nota2}}
+<br>
+nota3: {{object.nota3}}
+<br>
+media: {{object.media}}
+<br>
+Data: {{now|date}}
+<br>
+<a href = "{% url 'alunos_update' object.pk %}">Alterar</a>   
+<a href= "{% url 'alunos_delete' object.pk %}">deletar</a> 
