@@ -12,7 +12,18 @@ class Alunos (models.Model):
     obs = models.TextField()
     
         
+def calcular_media(self):
+        media_calc = (float(self.nota1) + float(self.nota2) + float(self.nota3))/3
+        self.media = media_calc
+        #self.save
+        Alunos.objects.filter(id=self.id).update(media=media_calc)
+
     def __str__ (self):
         return self.nome + ' ' + self.sobrenome
+
+@receiver (post_save, sender = Alunos)
+def update_media (sender, instance, **kwargs):
+    instance.calcular_media()
+
 
 
